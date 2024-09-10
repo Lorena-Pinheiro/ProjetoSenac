@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurante</title>
+</head>
+<body>
+
+    <header id="header">
+        <div id="img-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="hamburger">
+        </div>
+
+        <nav id="nav-header">
+            <div id="box-btn-hamburguer">
+                <button id="btn-hamburguer">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+            <ul>
+                <li class="item-nav-header">
+                    <a href="#">Inicio</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Sobre</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Cardapio</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Pedido</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="nav-header">
+            <ul>
+                <li class="item-nav-header"></li>
+                <li class="item-nav-header"></li>
+                <li class="item-nav-header"></li>
+                <li class="item-nav-header"></li>
+                <li class="item-nav-header"></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="sec-formulario">
+        <form id="formulario">
+            <div>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" >
+            </div>
+            
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" nome="senha" id="senha" required>
+                <button id="ver-senha">Ver Senha</button>
+            </label>
+            </div>
+
+            <input type="submit" value="Entrar">
+        </form>
+    </section>
+<script>
+
+    var btnHamburguer = document.getElementById("btn-hamburguer");
+    var navHeader = document.querySelector('#nav-header ul');
+
+    btnHamburguer.addEventListener('click', function(evento){
+        evento.preventDefault();
+        navHeader.classList.toggle('ativo');
+    })
+
+    var btnVerSenha = document.getElementById("ver-senha");
+    var inputSenha = document.getElementById("senha");
+    var contadorClick = 0;
+
+    btnVerSenha.addEventListener('click', function(){
+        contadorClick++;
+        inputSenha.attributes.type.value = "text";
+
+        if(contadorClick > 1){
+            inputSenha.attributes.type.value = "password";
+            contadorClick = 0;
+        }
+    })
+
+    var formulario = document.getElementById("formulario");
+
+    formulario.addEventListener('submit', function(eventoFormulario){
+        eventoFormulario.preventDefault()
+
+        var inputUsuario = document.getElementById("usuario");
+        var valorUsuario = inputUsuario.value.trim();
+
+        if(valorUsuario.lenght < 3){
+            alert("Usuario Incorreta");
+        };
+    })
+
+</script>
+</body>
+</html>

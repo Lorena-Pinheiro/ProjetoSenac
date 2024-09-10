@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+ 
+#header{
+    padding: 10px 60px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+ 
+#header #img-header {
+    width: 80px;
+    height: 80px;
+}
+ 
+#header #img-header img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+ 
+#header #nav-header #box-btn-hamburguer{
+    display: none;
+}
+ 
+#header #nav-header #box-btn-hamburguer #btn-hamburguer{
+    background: transparent;
+    border: none;
+}
+ 
+#header #nav-header #box-btn-hamburguer div{
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+ 
+#header #nav-header{
+    padding: 5px 0;
+    height: 40px;
+    position: relative;
+}
+ 
+#header #nav-header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 100%;
+}
+ 
+#header #nav-header ul .item-nav-header {
+    height: 100%;
+}
+ 
+#header #nav-header ul .item-nav-header a {
+    padding: 8px 16px;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    color: antiquewhite;
+    font-size: 18px;
+    font-weight: 600;
+}
+ 
+#header #nav-header ul .item-nav-header a:hover {
+    border: 2px solid darkcyan;
+}
+ 
+@media (max-width: 525px) {
+    #header #nav-header{
+        height: auto;
+    }
+ 
+    #header #nav-header #box-btn-hamburguer{
+        display: block;
+    }
+ 
+    #header #nav-header ul{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        height: fit-content;
+    }
+    #header #nav-header ul.ativo{
+        display: block;
+        background-color:darkcyan;
+    }
+}
