@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <div id="img-header">
+            <img src="https://jonnegroni.com/wp-content/uploads/2019/06/Untitled-design.png" alt="logo">
+        </div>
+
+        <nav id="nav-header">
+            <div id="box-btn-hamburguer">
+                <button id="btn-hamburguer" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </button>
+            </div>
+
+            <ul>
+                <li class="item-nav-header">
+                    <a href="#">Inicio</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Sobre</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Catalogo</a>
+                </li>
+                <li class="item-nav-header">
+                    <a href="">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="corpo container" >
+
+        <h1></h1>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-b-pop-arte-poster/poparteskins2/15938516076/7e6cee425e0b487be47c8b4b02018777.jpeg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-2-pop-arte-poster/poparteskins2/15938516082/b0979d1a27a8b107e6149264e564ae3e.jpeg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-3-d-pop-arte-poster/poparteskins2/15938539968/f474c289d85c4112b24a50de8c1a4298.jpeg" style="width:100%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+
+    
+
+        <section id="sec-formulario">
+            <form id="formulario">
+                <div>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" >
+                </div>
+                
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" nome="senha" id="senha" required>
+                    <button id="ver-senha">Ver Senha</button>
+                </label>
+                </div>
+    
+                <input type="submit" value="Entrar">
+            </form>
+        </section>
+
+
+
+
+    </section>
+    
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slides[slideIndex-1].style.display = "block";  
+    }
+    
+
+    function myFunction(x) {
+        x.classList.toggle("change");
+    }
+
+
+    var btnHamburguer = document.getElementById("btn-hamburguer");
+    var navHeader = document.querySelector('#nav-header ul');
+
+    btnHamburguer.addEventListener('click', function(evento){
+        evento.preventDefault();
+        navHeader.classList.toggle('ativo');
+    })
+
+    var btnVerSenha = document.getElementById("ver-senha");
+    var inputSenha = document.getElementById("senha");
+    var contadorClick = 0;
+
+    btnVerSenha.addEventListener('click', function(){
+        contadorClick++;
+        inputSenha.attributes.type.value = "text";
+
+        if(contadorClick > 1){
+            inputSenha.attributes.type.value = "password";
+            contadorClick = 0;
+        }
+    })
+
+    var formulario = document.getElementById("formulario");
+
+    formulario.addEventListener('submit', function(eventoFormulario){
+        eventoFormulario.preventDefault()
+
+        var inputUsuario = document.getElementById("usuario");
+        var valorUsuario = inputUsuario.value.trim();
+
+        if(valorUsuario.lenght < 3){
+            alert("Usuario Incorreta");
+        };
+    })
+
+</script>
+</body>
+</html>
