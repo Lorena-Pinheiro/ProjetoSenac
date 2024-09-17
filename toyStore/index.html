@@ -27,13 +27,13 @@
                     <a href="#">Inicio</a>
                 </li>
                 <li class="item-nav-header">
-                    <a href="">Sobre</a>
+                    <a href="#">Sobre</a>
                 </li>
                 <li class="item-nav-header">
-                    <a href="">Catalogo</a>
+                    <a href="#">Catalogo</a>
                 </li>
                 <li class="item-nav-header">
-                    <a href="">Contato</a>
+                    <a href="#">Contato</a>
                 </li>
             </ul>
         </nav>
@@ -41,20 +41,25 @@
 
     <section class="corpo container" >
 
-        <h1></h1>
+        <section class="artigo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Toy_Story_logo.svg/1200px-Toy_Story_logo.svg.png" alt="">
+            <p>Toy Story is a groundbreaking animated film released by Pixar in 1995. It was the first feature-length movie entirely created using computer animation. The story centers on Woody, a cowboy doll, and Buzz Lightyear, a space ranger toy, who start as rivals but eventually become close friends. They embark on a thrilling adventure after being separated from their owner, Andy. With its innovative animation, heartfelt story, and memorable characters, Toy Story became an instant classic, launching a beloved franchise and setting a new standard for animated films.</p>
+        </section>
+
+
 
         <div class="slideshow-container">
 
             <div class="mySlides fade">
-              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-b-pop-arte-poster/poparteskins2/15938516076/7e6cee425e0b487be47c8b4b02018777.jpeg" style="width:100%">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-b-pop-arte-poster/poparteskins2/15938516076/7e6cee425e0b487be47c8b4b02018777.jpeg" >
             </div>
             
             <div class="mySlides fade">
-              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-2-pop-arte-poster/poparteskins2/15938516082/b0979d1a27a8b107e6149264e564ae3e.jpeg" style="width:100%">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-2-pop-arte-poster/poparteskins2/15938516082/b0979d1a27a8b107e6149264e564ae3e.jpeg" >
             </div>
             
             <div class="mySlides fade">
-              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-3-d-pop-arte-poster/poparteskins2/15938539968/f474c289d85c4112b24a50de8c1a4298.jpeg" style="width:100%">
+              <img src="https://a-static.mlcdn.com.br/450x450/poster-cartaz-toy-story-3-d-pop-arte-poster/poparteskins2/15938539968/f474c289d85c4112b24a50de8c1a4298.jpeg" >
             </div>
             
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -64,24 +69,32 @@
 
     
 
-        <section id="sec-formulario">
-            <form id="formulario">
-                <div>
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" >
+        <section id="sec-contato" class="container">
+            <form action="" id="form-contato">
+                <div class="row">
+                    <label for="nome">Nome:</label>
+                <input type="text" id="nome">
                 </div>
-                
-                <div>
-                    <label for="senha">Senha:</label>
-                    <input type="password" nome="senha" id="senha" required>
-                    <button id="ver-senha">Ver Senha</button>
-                </label>
+               
+                <div class="row">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
                 </div>
-    
-                <input type="submit" value="Entrar">
+               
+                <div class="row">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+               
+                <div class="row">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+                </div>
+               
+     
+                <input type="submit" value="enviar">
             </form>
         </section>
-
 
 
 
@@ -124,6 +137,7 @@
         navHeader.classList.toggle('ativo');
     })
 
+    
     var btnVerSenha = document.getElementById("ver-senha");
     var inputSenha = document.getElementById("senha");
     var contadorClick = 0;
