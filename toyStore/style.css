@@ -165,7 +165,7 @@ body{
     padding: 10px 14px;
 }
 .box-img-produto{
-    width: 100%;
+    width: 100px;
     max-width: 200px;
     height: 150px;
 }
@@ -202,7 +202,7 @@ body{
 .nav button {
     background-color: transparent;
     border: none;
-    color: black;
+    color: #F9D445;
     padding: 5px;
     font-weight: 600;
     font-size:larger;
@@ -211,10 +211,25 @@ body{
 .nav.nav-left{
     left: -50px;
 }
+.inverter {
+    display: inline-block; 
+    transform: scaleX(-1); 
+}
 .nav.nav-right{
     right: -50px;
 }
+
+#sec-carousel h1{
+    background-color: #C52330;
+    color: white;
+    margin-bottom: 5rem;
+    padding: 1rem 0 1rem 0;
+    font-size:x-large;
+}
  
+footer{
+    background-color: #013D7B;
+}
 
 
 
@@ -297,9 +312,36 @@ body{
         padding: 10px;
     }
 
-    .slideshow-container {
+    .carousel{
         position: relative;
-        margin: 5rem 5rem 5rem 5rem;
+        width: 6px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .box-img-produto{
+        width: 100px;
+        max-width: 200px;
+        height: 150px;
+    }
+    .box-img-produto img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .nav.nav-left{
+        left: -1px;
+    }
+    .inverter {
+        display: inline-block; 
+        transform: scaleX(-1); 
+    }
+    .nav.nav-right{
+        right: -1px;
+    }
+    #sec-carousel{
+        width: 400px;
     }
     
 }
@@ -374,6 +416,25 @@ body{
         letter-spacing: 0.5px;
         line-height: 1.5;
         padding: 0px 10px;
+    }
+
+    .carousel{
+        position: relative;
+        width: 600px;
+        height: 266px;
+        margin: 0 auto;
+    }
+
+    .box-img-produto{
+        width: 100px;
+        max-width: 200px;
+        height: 150px;
+    }
+    .box-img-produto img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
 }
